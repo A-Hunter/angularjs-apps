@@ -35,10 +35,18 @@
     </nav>
 
     <div class="container">
-        <div class="starter-template">
-            <input type="text" placeholder="Enter your name" ng-model="myName">
-            <h1>Hello, <span ng-bind="myName"></span> </h1>
-            <h1>Hello, {{myName}}</h1>
+        <div class="starter-template" ng-controller="nameController">
+            <div class="input-group">
+                <label for="firstName"> First Name
+                    <input type="text" placeholder="Enter your first name" ng-model="firstName">
+                </label>
+            </div>
+            <div class="input-group">
+                <label for="lastName"> Last Name
+                    <input type="text" placeholder="Enter your last name" ng-model="lastName">
+                </label>
+            </div>
+            <h1>Hello, {{printName()}}</h1>
         </div>
     </div>
 
