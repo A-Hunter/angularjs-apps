@@ -1,10 +1,20 @@
 var app = angular.module('myApp',[]);
 
-app.controller('nameController', function($scope){
+
+app.factory('personService', function(){
+    var person = {};
+    person.printName = function(firstName, lastName){
+        return firstName + ' ' + lastName;
+    }
+    return person;
+});
+
+
+app.controller('nameController', function($scope,personService){
     $scope.firstName = "Itachi";
     $scope.lastName = "Uchiha";
 
     $scope.printName = function(){
-        return $scope.firstName + ' ' + $scope.lastName;
-    }
-})
+        return personService.printName($scope.firstName, $scope.lastName)
+        }
+});
