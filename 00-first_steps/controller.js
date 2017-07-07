@@ -1,10 +1,8 @@
-app.controller('parentNameController', function($scope){
+app.controller('nameController', function($scope,personService){
     $scope.firstName = "Itachi";
-
-}).controller('sonNameController', function($scope){
-
     $scope.lastName = "Uchiha";
-//    $scope.printName = function(){
-//        return $scope.firstName + ' ' + $scope.lastName;
-//    }
-})
+
+    $scope.printName = function(){
+        return personService.printName($scope.firstName, $scope.lastName)
+        }
+});
