@@ -1,5 +1,16 @@
-var app = angular.module('myApp',[]);
+var app = angular.module('myApp',['ngRoute']);
 
+app.config(['$routeProvider',function($routeProvider){
+    $routeProvider
+        .when('/about',{
+        templateUrl:'views/about.html'
+    })
+        .when('/contact',{
+        templateUrl:'views/contact.html'
+    }).otherwise({
+        redirectTo:'/'
+    })
+}]);
 
 app.factory('personService', function(){
     var person = {};
