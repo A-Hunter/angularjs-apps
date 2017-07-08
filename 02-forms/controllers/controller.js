@@ -1,8 +1,8 @@
-angular.module('eventApp').controller('mainCtrl',['$scope','eventFactory', function($scope,eventFactory){
-    $scope.event = eventFactory.getAllEvents();
+angular.module('eventApp').controller('mainCtrl',['eventFactory', function(eventFactory){
+    this.event = eventFactory.getAllEvents();
 
-    $scope.submitForm =  function(form){
-        eventFactory.createEvent(angular.copy(form), $scope.event);
-        console.log($scope.event);
+    this.submitForm =  function(form){
+        eventFactory.createEvent(angular.copy(form), this.event);
+        console.log(this.event);
     }
 }])
