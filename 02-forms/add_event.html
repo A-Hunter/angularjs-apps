@@ -36,12 +36,8 @@
                         <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
                             <div class="form-group">
                                 <label for="eventLocation" class="control-label">Category</label>
-                                <select class="form-control" ng-model="eventForm.category" data-width="100%" name="eventCategory">
-                                    <option value="one">Category one</option>
-                                    <option value="two">Category two</option>
-                                    <option value="three">Category three</option>
-                                    <option value="four">Category four</option>
-                                    <option value="fifth">Category fifth</option>
+                                <select class="form-control" ng-model="eventForm.category" data-width="100%" name="eventCategory"
+                                        ng-options="category.id as category.name group by category.group for category in eventCtrl.categories">
                                 </select>
                                 <p class="help-block">The event location</p>
                             </div>
